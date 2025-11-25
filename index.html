@@ -640,8 +640,8 @@
                 header_cta: "Send Energy Now",
                 fv_badge: "Japan-Philippines Joint Project | Special Christmas Event",
                 fv_title_1: "This Christmas,",
-                fv_title_2: "Send a Warm Gift",
-                fv_title_3: "",
+                fv_title_2: "Send a ",
+                fv_title_3: "Warm Gift",
                 fv_title_4: " to Cebu.",
                 fv_subtitle: "Your 500 yen becomes 'Japanese Energy' that lights up the future.",
                 fv_desc: "To the people of Cebu, Philippines, facing difficulties.<br>A Pay-forward project by UZUSHIO Holdings and UZU PH<br class=\"hidden md:block\">to deliver smiles with the legendary Sutadon.",
@@ -733,7 +733,7 @@
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
+                if (translations[currentLang][key] !== undefined) {
                     element.innerHTML = translations[currentLang][key];
                 }
             });
