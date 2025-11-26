@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【クリスマス緊急企画】セブ島へ日本の元気を贈ろう！すた丼Pay-forwardクリスマスイベント2025</title>
-    <meta name="description" content="UZUSHIO HoldingsとUZU PHによる日本・フィリピン共同プロジェクト。地震・洪水被害に苦しむセブ島へ、伝説のすた丼で日本の元気を届けるPay-forward企画です。あなたの500円が未来の希望になります。">
+    <title>【クリスマス緊急企画】セブ島へ日本の元気を贈ろう！すた丼Pay It Forwardクリスマスイベント2025</title>
+    <meta name="description" content="UZUSHIO HoldingsとUZU PHによる日本・フィリピン共同プロジェクト。地震・洪水被害に苦しむセブ島へ、伝説のすた丼で日本の元気を届けるPay It Forward企画です。あなたの500円が未来の希望になります。">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -19,10 +19,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'uzu-blue': '#0a1f4d', /* UZUSHIO Holdingsイメージの濃紺 */
+                        'uzu-blue': '#0a1f4d',
                         'uzu-light': '#eef2ff',
-                        'xmas-red': '#c41e3a', /* クリスマスレッド */
-                        'xmas-gold': '#d4af37', /* ゴールド */
+                        'xmas-red': '#c41e3a',
+                        'xmas-gold': '#d4af37',
                         'suta-bg': '#fff8f0',
                     },
                     fontFamily: {
@@ -65,7 +65,6 @@
     <!-- 【Header】 ヘッダー -->
     <header class="fixed top-0 left-0 w-full shadow-md z-50 transition-all duration-300 overflow-hidden bg-uzu-blue">
         <div class="absolute inset-0 z-0">
-            <!-- 指定画像: mactannight.jpg -->
             <img src="mactannight.jpg" 
                  alt="Header Background" 
                  class="w-full h-full object-cover opacity-30"
@@ -74,7 +73,6 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
-            <!-- ロゴ -->
             <div class="flex items-center gap-2 md:gap-4">
                 <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
                     <div class="text-white font-bold text-sm md:text-lg tracking-tighter border-2 border-white px-2 py-0.5 leading-tight">
@@ -87,15 +85,12 @@
                 </div>
             </div>
             
-            <!-- 右側エリア：言語切り替え & CTA -->
             <div class="flex items-center gap-3 md:gap-4">
-                <!-- 言語切り替えボタン -->
                 <button onclick="toggleLanguage()" class="flex items-center gap-1 text-white hover:text-xmas-gold transition text-sm md:text-base border border-white/30 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm">
                     <i class="fas fa-globe"></i>
                     <span id="lang-label">English</span>
                 </button>
 
-                <!-- Header CTA -->
                 <a href="payment.html" class="hidden md:block bg-xmas-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition transform hover:scale-105 text-sm border border-red-800">
                     <i class="fas fa-gift mr-2"></i><span data-i18n="header_cta">今すぐ元気を贈る</span>
                 </a>
@@ -129,10 +124,9 @@
             <p class="text-white/80 text-sm md:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" data-i18n="fv_desc">
                 困難な状況にあるフィリピン・セブ島の人々へ。<br>
                 UZUSHIO HoldingsとUZU PHが手を組み、<br class="hidden md:block">
-                伝説のすた丼で笑顔を届けるPay-forwardプロジェクト。
+                伝説のすた丼で笑顔を届けるPay It Forwardプロジェクト。
             </p>
 
-            <!-- CTAボタン -->
             <a href="payment.html" class="group relative inline-flex flex-col items-center justify-center bg-gradient-to-r from-xmas-gold to-yellow-500 text-white font-bold text-xl md:text-2xl py-4 px-10 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.6)] hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] transition-all transform hover:-translate-y-1 border-b-4 border-yellow-700 overflow-hidden">
                 <span class="relative z-10 flex items-center">
                     <i class="fas fa-hand-holding-heart mr-3"></i>
@@ -142,7 +136,6 @@
                 <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-shine"></div>
             </a>
 
-            <!-- 装飾画像 -->
             <div class="mt-10 md:mt-16 relative w-full max-w-4xl mx-auto h-40 md:h-64 pointer-events-none">
                 <div class="absolute left-0 bottom-0 w-32 md:w-56 h-32 md:h-56 rounded-full border-4 border-white shadow-lg overflow-hidden transform -translate-x-4 translate-y-4 md:translate-y-8 z-10 bg-gray-200">
                     <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop" 
@@ -297,16 +290,14 @@
         </div>
     </section>
 
-    <!-- 【Section 5】 なぜ「伝説のすた丼」なのか？ (Revised for History & Vision) -->
+    <!-- 【Section 5】 なぜ「伝説のすた丼」なのか？ -->
     <section class="py-16 md:py-24 px-4 bg-white">
         <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
             <div class="md:w-1/2 text-center md:text-left">
-                <!-- タイトル変更 -->
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                     <span data-i18n="history_title">伝説のすた丼屋：創業からの魂と、世界への挑戦</span>
                 </h2>
                 
-                <!-- 創業ストーリー -->
                 <div class="mb-6 space-y-4 text-gray-600 leading-relaxed">
                     <p class="font-bold text-gray-800" data-i18n="history_sub">1971年創業。「旨いものを腹いっぱい食べて頑張ってほしい」という親父の想い。</p>
                     <p data-i18n="history_p1">
@@ -314,19 +305,16 @@
                     </p>
                 </div>
 
-                <!-- アントワークスのビジョン -->
                 <div class="bg-gray-50 border-l-4 border-uzu-blue p-5 mb-6 rounded-r shadow-sm text-left">
                     <h3 class="text-gray-800 font-bold mb-2 flex items-center">
                         <i class="fas fa-globe-asia text-uzu-blue mr-2"></i><span data-i18n="vision_section_title">世界に希望を与える日本食レストランへ</span>
                     </h3>
-                    <!-- 修正箇所：UZU Familyの文言反映 -->
                     <p class="text-gray-600 text-sm leading-relaxed" data-i18n="vision_content">
                         運営する株式会社アントワークスの企業理念は『食を通じて、日本全国さらには世界の人々の底力となる』こと。<br>
                         単なる飲食店ではなく、食を通じて人々にエネルギーを与え、世界に希望を与える代表的な日本食レストランになるとUZU Familyは信じています。
                     </p>
                 </div>
 
-                <!-- ご馳走・レチョン文化との接続 -->
                 <div class="bg-yellow-50 border-l-4 border-xmas-gold p-5 rounded-r shadow-sm text-left space-y-4">
                     <div>
                         <p class="text-gray-800 font-bold mb-1 text-sm md:text-base flex items-center">
@@ -359,7 +347,7 @@
         </div>
     </section>
 
-    <!-- 【Section 6】 Pay-forwardの仕組み -->
+    <!-- 【Section 6】 Pay It Forwardの仕組み -->
     <section class="bg-blue-50 py-16 md:py-24 px-4">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-2xl md:text-3xl font-bold text-uzu-blue mb-12">
@@ -368,7 +356,6 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mb-12">
-                <!-- 矢印 -->
                 <div class="hidden md:block absolute top-1/2 left-1/3 transform -translate-y-1/2 -translate-x-1/2 text-4xl text-xmas-gold z-0">
                     <i class="fas fa-plane"></i>
                 </div>
@@ -409,7 +396,7 @@
 
             <div class="bg-white p-8 rounded-xl max-w-3xl mx-auto shadow-sm text-left md:text-center">
                 <p class="text-gray-700 leading-relaxed mb-4" data-i18n="pay_p1">
-                    仕組みはシンプルです。あなたがこのサイトで「Pay-forwardチケット（500円）」を購入すると、そのチケットがセブ島のイベント会場で温かい「すた丼」一杯に変わります。
+                    仕組みはシンプルです。あなたがこのサイトで「Pay It Forwardチケット（500円）」を購入すると、そのチケットがセブ島のイベント会場で温かい「すた丼」一杯に変わります。
                 </p>
                 <p class="text-gray-700 leading-relaxed" data-i18n="pay_p2">
                     あなたが贈るのは、ただの食事券ではありません。遠く離れた日本から、彼らを想う「温かい心」そのものです。<br class="hidden md:block">今年のクリスマス、あなたもセブ島のサンタクロースになりませんか？
@@ -424,7 +411,7 @@
             <div class="text-center mb-10">
                 <h2 class="text-2xl font-bold text-uzu-blue">
                     <span data-i18n="outline_title_1">日本・フィリピン共同開催</span><br>
-                    <span data-i18n="outline_title_2">クリスマスすた丼Pay-forwardイベント概要</span>
+                    <span data-i18n="outline_title_2">クリスマスすた丼Pay It Forwardイベント概要</span>
                 </h2>
             </div>
 
@@ -473,7 +460,7 @@
 
                         <dt class="font-bold text-gray-500" data-i18n="outline_dt_3">提供価格</dt>
                         <dd class="md:col-span-2 text-gray-900">
-                            <span data-i18n="outline_dd_3_1">Pay-forward 1杯 500円相当</span><br>
+                            <span data-i18n="outline_dd_3_1">Pay It Forward 1杯 500円相当</span><br>
                             <span class="text-xmas-red text-xs" data-i18n="outline_dd_3_2">※皆様からの支援で賄われます</span>
                         </dd>
                     </dl>
@@ -550,6 +537,9 @@
                 <span class="mx-2 text-gray-700">|</span>
                 <a href="privacy.html" class="text-sm hover:text-white transition" data-i18n="footer_privacy">プライバシーポリシー</a>
                 <p class="mt-4 text-xs text-gray-600">&copy; 2025 UZUSHIO Holdings / UZU PH Enterprises Inc. All Rights Reserved.</p>
+                <p class="mt-2 text-xs text-gray-600">
+                    Produced by <a href="https://flowerangelhk.com/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400 transition underline decoration-gray-700">Flower Angel</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -566,7 +556,7 @@
                 fv_title_3: "温かい贈り物",
                 fv_title_4: "を。",
                 fv_subtitle: "あなたの500円が、未来を照らす「日本の元気」になる。",
-                fv_desc: "困難な状況にあるフィリピン・セブ島の人々へ。<br>UZUSHIO HoldingsとUZU PHが手を組み、<br class=\"hidden md:block\">伝説のすた丼で笑顔を届けるPay-forwardプロジェクト。",
+                fv_desc: "困難な状況にあるフィリピン・セブ島の人々へ。<br>UZUSHIO HoldingsとUZU PHが手を組み、<br class=\"hidden md:block\">伝説のすた丼で笑顔を届けるPay It Forwardプロジェクト。",
                 fv_cta: "今すぐ、セブ島へ日本の活力を贈る",
                 fv_cta_sub: "（1枚 500円〜 クレジットカード対応）",
                 msg_title_1: "セブ島からのメッセージ：",
@@ -613,10 +603,10 @@
                 pay_step3_title: "【現地の方】",
                 pay_step3_sub: "笑顔で受け取る",
                 pay_step3_desc: "最高のプレゼント！",
-                pay_p1: "仕組みはシンプルです。あなたがこのサイトで「Pay-forwardチケット（500円）」を購入すると、そのチケットがセブ島のイベント会場で温かい「すた丼」一杯に変わります。",
+                pay_p1: "仕組みはシンプルです。あなたがこのサイトで「Pay It Forwardチケット（500円）」を購入すると、そのチケットがセブ島のイベント会場で温かい「すた丼」一杯に変わります。",
                 pay_p2: "あなたが贈るのは、ただの食事券ではありません。遠く離れた日本から、彼らを想う「温かい心」そのものです。<br class=\"hidden md:block\">今年のクリスマス、あなたもセブ島のサンタクロースになりませんか？",
                 outline_title_1: "日本・フィリピン共同開催",
-                outline_title_2: "クリスマスすた丼Pay-forwardイベント概要",
+                outline_title_2: "クリスマスすた丼Pay It Forwardイベント概要",
                 venue_desc_1: "美しいビーチフロントに、高級レジデンスや世界的ホテルが集結するセブ島屈指のラグジュアリー・タウンシップ。<br class=\"hidden md:inline\">その格式の高さから、<strong class=\"text-white border-b border-xmas-gold pb-0.5\">2026年5月開催「ASEAN首脳会議」の会場</strong>にも選定された特別な場所です。",
                 venue_desc_2: "しかし、その素顔は驚くほど開放的でフレンドリー。<br>週末には地元の家族連れや子供たちの笑い声が響き渡る、誰もが安心して過ごせる温かいコミュニティでもあります。",
                 venue_desc_3: "世界が注目するこの地で、Humanitarian Economy促進の覚書（MOU）を締結した<br class=\"hidden md:inline\">強力なパートナーの全面協力のもと、本イベントは開催されます。",
@@ -624,7 +614,7 @@
                 outline_dd_1: "2025年12月20日（土）＆ 12月21日（日）<br><span class=\"text-sm font-normal text-gray-600\">各日 15:00〜17:00</span>",
                 outline_dt_2: "場所",
                 outline_dt_3: "提供価格",
-                outline_dd_3_1: "Pay-forward 1杯 500円相当",
+                outline_dd_3_1: "Pay It Forward 1杯 500円相当",
                 outline_dd_3_2: "※皆様からの支援で賄われます",
                 outline_goal: "目標は、一人でも多くの方に元気になれる食事を届けること。",
                 outline_help: "そのためには、日本にいる皆さんの力が不可欠です。",
@@ -644,7 +634,7 @@
                 fv_title_3: "Warm Gift",
                 fv_title_4: " to Cebu.",
                 fv_subtitle: "Your 500 yen becomes 'Japanese Energy' that lights up the future.",
-                fv_desc: "To the people of Cebu, Philippines, facing difficulties.<br>A Pay-forward project by UZUSHIO Holdings and UZU PH<br class=\"hidden md:block\">to deliver smiles with the legendary Sutadon.",
+                fv_desc: "To the people of Cebu, Philippines, facing difficulties.<br>A Pay It Forward project by UZUSHIO Holdings and UZU PH<br class=\"hidden md:block\">to deliver smiles with the legendary Sutadon.",
                 fv_cta: "Send Vitality to Cebu Now",
                 fv_cta_sub: "(From 500 yen / Credit Card Accepted)",
                 msg_title_1: "Message from Cebu:",
@@ -691,10 +681,10 @@
                 pay_step3_title: "[Locals]",
                 pay_step3_sub: "Receive with a smile",
                 pay_step3_desc: "The Best Present!",
-                pay_p1: "The mechanism is simple. When you purchase a 'Pay-forward Ticket (500 yen)' on this site, that ticket turns into a warm cup of 'Sutadon' at the event venue in Cebu Island.",
+                pay_p1: "The mechanism is simple. When you purchase a 'Pay It Forward Ticket (500 yen)' on this site, that ticket turns into a warm cup of 'Sutadon' at the event venue in Cebu Island.",
                 pay_p2: "What you are giving is not just a meal ticket. It is the 'warm heart' itself that thinks of them from far away Japan.<br class=\"hidden md:block\">Why don't you become a Santa Claus in Cebu this Christmas?",
                 outline_title_1: "Japan-Philippines Joint Event",
-                outline_title_2: "Christmas Sutadon Pay-forward Event Overview",
+                outline_title_2: "Christmas Sutadon Pay It Forward Event Overview",
                 venue_desc_1: "A luxury township in Cebu where high-class residences and world-class hotels gather on a beautiful beachfront.<br class=\"hidden md:inline\">Because of its high prestige, it is a special place selected as the <strong class=\"text-white border-b border-xmas-gold pb-0.5\">venue for the 'ASEAN Summit' to be held in May 2026</strong>.",
                 venue_desc_2: "However, its real face is surprisingly open and friendly.<br>It is also a warm community where everyone can spend time with peace of mind, with the laughter of local families and children echoing on weekends.",
                 venue_desc_3: "In this place that the world pays attention to, this event will be held with the full cooperation of a powerful partner who has signed a Memorandum of Understanding (MOU) for the promotion of Humanitarian Economy.",
@@ -702,7 +692,7 @@
                 outline_dd_1: "Dec 20 (Sat) & Dec 21 (Sun), 2025<br><span class=\"text-sm font-normal text-gray-600\">15:00 - 17:00 each day</span>",
                 outline_dt_2: "Location",
                 outline_dt_3: "Price",
-                outline_dd_3_1: "Pay-forward 1 bowl worth 500 yen",
+                outline_dd_3_1: "Pay It Forward 1 bowl worth 500 yen",
                 outline_dd_3_2: "*Covered by everyone's support",
                 outline_goal: "The goal is to deliver energizing meals to as many people as possible.",
                 outline_help: "To do that, the power of everyone in Japan is essential.",
