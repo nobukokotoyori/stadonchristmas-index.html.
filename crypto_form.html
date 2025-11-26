@@ -52,12 +52,8 @@
                 <p class="text-sm text-gray-600 mt-2" data-i18n="form_desc">銀行振込または仮想通貨送金が完了しましたら、照合のため以下の情報をお知らせください。</p>
             </div>
 
-            <!-- 
-                ★重要: Formspreeの設定★
-                以下の action="" の中に、FormspreeでコピーしたURLを貼り付けてください。
-                例: action="https://formspree.io/f/xmayqkqz"
-            -->
-            <form action="https://formspree.io/f/mldkgdpq" method="POST" class="space-y-6">
+            <!-- フォーム (action属性は削除し、JSで制御します) -->
+            <form id="report-form" class="space-y-6">
                 
                 <div>
                     <label class="block text-sm font-bold text-gray-700 mb-1" data-i18n="label_name">お名前 <span class="text-red-500">*</span></label>
@@ -101,9 +97,12 @@
                     <textarea name="message" rows="3" placeholder="応援メッセージなどあればご記入ください" data-placeholder-ja="応援メッセージなどあればご記入ください" data-placeholder-en="Please write any cheering messages" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-uzu-blue outline-none"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-uzu-blue hover:bg-blue-900 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:scale-[1.01]">
+                <button type="submit" id="submit-btn" class="w-full bg-uzu-blue hover:bg-blue-900 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:scale-[1.01] flex justify-center items-center gap-2">
                     <span data-i18n="btn_submit">報告を送信する</span>
                 </button>
+                
+                <!-- ステータスメッセージ表示エリア -->
+                <p id="form-status" class="text-center text-sm font-bold mt-2"></p>
 
             </form>
         </div>
@@ -114,6 +113,63 @@
     </footer>
 
     <script>
+        // ▼▼▼ ここにFormspreeのIDを入力してください（例: xmayqkqz） ▼▼▼
+        const FORMSPREE_ID = "mldkgdpq"; 
+        // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+        const form = document.getElementById("report-form");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const status = document.getElementById("form-status");
+            const btn = document.getElementById("submit-btn");
+            const data = new FormData(event.target);
+
+            // ID未設定時のアラート
+            if (FORMSPREE_ID === "YOUR_FORM_ID_HERE") {
+                alert("エラー: Formspree IDが設定されていません。HTMLファイルを編集してください。");
+                return;
+            }
+
+            // 送信中の表示
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            try {
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // 成功時：感謝状ページへ移動
+                    window.location.href = "certificate.html";
+                } else {
+                    // エラー時
+                    const result = await response.json();
+                    if (Object.hasOwn(result, 'errors')) {
+                        status.innerHTML = result.errors.map(error => error["message"]).join(", ");
+                    } else {
+                        status.innerHTML = "送信に失敗しました。もう一度お試しください。";
+                    }
+                    status.classList.add("text-red-600");
+                    btn.disabled = false;
+                    btn.innerHTML = '<span data-i18n="btn_submit">報告を送信する</span>';
+                }
+            } catch (error) {
+                status.innerHTML = "エラーが発生しました。";
+                status.classList.add("text-red-600");
+                btn.disabled = false;
+                btn.innerHTML = '<span data-i18n="btn_submit">報告を送信する</span>';
+            }
+        }
+
+        form.addEventListener("submit", handleSubmit);
+
+        // --- 以下、翻訳スクリプト ---
         const translations = {
             ja: {
                 back: "戻る",
@@ -163,7 +219,6 @@
         }
 
         function updateContent() {
-            // テキスト書き換え
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -171,8 +226,6 @@
                     element.innerHTML = translations[currentLang][key];
                 }
             });
-
-            // プレースホルダー書き換え
             const inputs = document.querySelectorAll('[data-placeholder-ja]');
             inputs.forEach(input => {
                 const text = currentLang === 'ja' 
