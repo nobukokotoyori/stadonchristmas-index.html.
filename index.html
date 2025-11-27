@@ -19,10 +19,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'uzu-blue': '#0a1f4d',
+                        'uzu-blue': '#0a1f4d', /* UZUSHIO Holdingsイメージの濃紺 */
                         'uzu-light': '#eef2ff',
-                        'xmas-red': '#c41e3a',
-                        'xmas-gold': '#d4af37',
+                        'xmas-red': '#c41e3a', /* クリスマスレッド */
+                        'xmas-gold': '#d4af37', /* ゴールド */
                         'suta-bg': '#fff8f0',
                     },
                     fontFamily: {
@@ -65,6 +65,7 @@
     <!-- 【Header】 ヘッダー -->
     <header class="fixed top-0 left-0 w-full shadow-md z-50 transition-all duration-300 overflow-hidden bg-uzu-blue">
         <div class="absolute inset-0 z-0">
+            <!-- 指定画像: mactannight.jpg -->
             <img src="mactannight.jpg" 
                  alt="Header Background" 
                  class="w-full h-full object-cover opacity-30"
@@ -236,6 +237,35 @@
                 <p data-i18n="story_p4">
                     私たちは、2026年の本格始動に先駆け、クリスマスに特別プロジェクトを実施することを決意しました。これは、日本とフィリピンが手を取り合い、未来の笑顔を作るための第一歩です。
                 </p>
+
+                <!-- 追加: 支援活動の写真・動画ギャラリー -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- 1枚目: 写真 (liloan.jpg) -->
+                    <div class="rounded-lg overflow-hidden shadow-md h-48 bg-gray-100 relative group">
+                        <img src="liloan.jpg" alt="Liloan Relief Efforts" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    </div>
+                    
+                    <!-- 2枚目: 動画 (movie1.mp4) -->
+                    <div class="rounded-lg overflow-hidden shadow-md h-48 bg-black relative group">
+                        <video controls playsinline class="w-full h-full object-cover">
+                            <source src="movie1.mp4" type="video/mp4">
+                            <p class="text-white text-xs p-4 text-center flex items-center justify-center h-full">
+                                <span><i class="fas fa-video-slash mr-2"></i>動画を再生できません</span>
+                            </p>
+                        </video>
+                    </div>
+
+                    <!-- 3枚目: 動画 (movie2.mp4) -->
+                    <div class="rounded-lg overflow-hidden shadow-md h-48 bg-black relative group">
+                        <video controls playsinline class="w-full h-full object-cover">
+                            <source src="movie2.mp4" type="video/mp4">
+                            <p class="text-white text-xs p-4 text-center flex items-center justify-center h-full">
+                                <span><i class="fas fa-video-slash mr-2"></i>動画を再生できません</span>
+                            </p>
+                        </video>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center" data-i18n="story_photo_caption">現地での支援活動の様子</p>
             </div>
         </div>
     </section>
@@ -290,14 +320,16 @@
         </div>
     </section>
 
-    <!-- 【Section 5】 なぜ「伝説のすた丼」なのか？ -->
+    <!-- 【Section 5】 なぜ「伝説のすた丼」なのか？ (Revised for History & Vision) -->
     <section class="py-16 md:py-24 px-4 bg-white">
         <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
             <div class="md:w-1/2 text-center md:text-left">
+                <!-- タイトル変更 -->
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-tight">
                     <span data-i18n="history_title">伝説のすた丼屋：創業からの魂と、世界への挑戦</span>
                 </h2>
                 
+                <!-- 創業ストーリー -->
                 <div class="mb-6 space-y-4 text-gray-600 leading-relaxed">
                     <p class="font-bold text-gray-800" data-i18n="history_sub">1971年創業。「旨いものを腹いっぱい食べて頑張ってほしい」という親父の想い。</p>
                     <p data-i18n="history_p1">
@@ -305,16 +337,19 @@
                     </p>
                 </div>
 
+                <!-- アントワークスのビジョン -->
                 <div class="bg-gray-50 border-l-4 border-uzu-blue p-5 mb-6 rounded-r shadow-sm text-left">
                     <h3 class="text-gray-800 font-bold mb-2 flex items-center">
                         <i class="fas fa-globe-asia text-uzu-blue mr-2"></i><span data-i18n="vision_section_title">世界に希望を与える日本食レストランへ</span>
                     </h3>
+                    <!-- 修正箇所：UZU Familyの文言反映 -->
                     <p class="text-gray-600 text-sm leading-relaxed" data-i18n="vision_content">
                         運営する株式会社アントワークスの企業理念は『食を通じて、日本全国さらには世界の人々の底力となる』こと。<br>
                         単なる飲食店ではなく、食を通じて人々にエネルギーを与え、世界に希望を与える代表的な日本食レストランになるとUZU Familyは信じています。
                     </p>
                 </div>
 
+                <!-- ご馳走・レチョン文化との接続 -->
                 <div class="bg-yellow-50 border-l-4 border-xmas-gold p-5 rounded-r shadow-sm text-left space-y-4">
                     <div>
                         <p class="text-gray-800 font-bold mb-1 text-sm md:text-base flex items-center">
@@ -356,6 +391,7 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mb-12">
+                <!-- 矢印 -->
                 <div class="hidden md:block absolute top-1/2 left-1/3 transform -translate-y-1/2 -translate-x-1/2 text-4xl text-xmas-gold z-0">
                     <i class="fas fa-plane"></i>
                 </div>
@@ -573,6 +609,7 @@
                 story_p3: "2026年1月の本格稼働を目指し、このSUTADONYAコンテナレストランはセブ島の新たな希望の拠点となるはずでした。しかし、その準備の最中、現地の人々が困難な状況にあり、ささやかながら支援にも出向いていきながらなにができるか考えさせられるきっかけになっていったのです。",
                 story_quote: "「自然災害で不安な思いをした子、被害にあった子供達にすた丼のクリスマスプレゼントを渡したい。」",
                 story_p4: "私たちは、2026年の本格始動に先駆け、クリスマスに特別プロジェクトを実施することを決意しました。これは、日本とフィリピンが手を取り合い、未来の笑顔を作るための第一歩です。",
+                story_photo_caption: "現地での支援活動の様子",
                 vision_title_1: "目に見える・目に見えない",
                 vision_title_2: "日本の価値と共に衣食住を支援したい。",
                 vision_subtitle: "〜私たちが目指す Humanitarian Economy〜",
@@ -651,6 +688,7 @@
                 story_p3: "Aiming for full-scale operation in January 2026, this SUTADONYA Container Restaurant was supposed to be a new base of hope for Cebu. However, during the preparation, we learned that the local people were in a difficult situation, and as we went out to support them in a small way, it became an opportunity to think about what we could do.",
                 story_quote: "\"We want to give Sutadon Christmas presents to children who felt anxious due to natural disasters and those who were affected.\"",
                 story_p4: "We decided to implement a special project this Christmas, ahead of the full-scale start in 2026. This is the first step for Japan and the Philippines to join hands and create future smiles.",
+                story_photo_caption: "Scenes of support activities on the ground",
                 vision_title_1: "Visible and Invisible",
                 vision_title_2: "Supporting Food, Clothing, and Shelter with Japanese Values.",
                 vision_subtitle: "~The Humanitarian Economy We Aim For~",
