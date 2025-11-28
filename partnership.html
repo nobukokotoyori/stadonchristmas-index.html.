@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UZU WORLD | Global Partnership Plans</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- BASE SETUP & TYPOGRAPHY --- */
+        :root {
+            --primary-dark: #0f172a;  /* Deep Navy */
+            --primary-light: #f8fafc; /* Very Light Blue-Grey */
+            --accent-gold: #b45309;   /* Bronze/Gold */
+            --text-dark: #334155;     /* Slate */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-dark);
+        }
+
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- UTILITIES & CONTAINERS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .page-section {
+            background-color: #fff;
+            padding: 60px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            width: 100%;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        /* --- HEADER / HERO --- */
+        header {
+            background-color: var(--primary-dark);
+            background-image: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 70%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        /* 既存のh1スタイルを調整し、2行表示に対応させる */
+        header h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 0px; /* 以前よりマージンを減らす */
+            letter-spacing: 2px;
+            line-height: 1.1; /* 行の高さを調整 */
+        }
+        
+        /* 2行目のスタイルを追加 */
+        header h1 span {
+            display: block;
+            font-size: 2.5rem; /* 2行目を少し小さくする */
+            color: #94a3b8; /* サブタイトルに近い色にする */
+            font-weight: 400;
+            margin-top: 5px; /* 上の行との間隔を調整 */
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        header .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.5rem;
+            color: #94a3b8;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px; /* h1の上にスペースを追加 */
+        }
+        
+        /* h1とsubtitleのスタイル変更に伴い、ヒーローセクションの要素の配置を微調整 */
+        header .container > p:first-of-type {
+            margin-bottom: 20px;
+        }
+
+        /* --- LAYOUTS --- */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bleed-image-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 40px 0;
+            border-radius: 8px; /* Added rounded corners for tier sections */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+        }
+
+        .bleed-text-side {
+            padding: 0 40px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: 'Cinzel', serif;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent-gold);
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #92400e;
+            transform: translateY(-2px);
+        }
+
+        /* --- TABLE --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: white;
+            border-radius: 8px; /* Added rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners clip table content */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: var(--primary-dark);
+            color: white;
+            font-family: 'Cinzel', serif;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none; /* Remove border from last row */
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc; /* Subtle row striping */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            .two-column, .bleed-image-layout {
+                grid-template-columns: 1fr;
+            }
+            .bleed-text-side {
+                padding: 0;
+            }
+            .image-wrapper {
+                max-height: 300px;
+                order: -1; /* Move image above text on mobile for better flow */
+            }
+            .bleed-image-layout:nth-child(even) .image-wrapper {
+                order: 1; /* Keep alternating images */
+            }
+        }
+        @media (max-width: 600px) {
+             header h1 {
+                font-size: 3rem; /* モバイルでの調整 */
+            }
+            header h1 span {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container">
+            <p class="subtitle">Produced by Flower Angel</p>
+            <!-- 変更点: h1を2行表示に変更 -->
+            <h1>
+                UZU
+                <span>WORLD PARTNERSHIP PLAN</span>
+            </h1>
+            <p style="font-size: 1.5rem; color: #cbd5e1; margin-top: 10px;">Supporting the World through Japanese value</p>
+            <a href="#plans" class="cta-button" style="margin-top: 40px;">Explore Partnership Tiers</a>
+        </div>
+    </header>
+
+    <!-- MISSION & PHILOSOPHY -->
+    <section class="page-section">
+        <div class="container">
+            <h2 class="section-title">Mission & Philosophy</h2>
+            <div class="two-column">
+                <div class="image-wrapper">
+                    <!-- uzuworld1.jpg に更新 -->
+                    <img src="uzuworld1.jpg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/ffffff?text=uzuworld1.jpg+Fallback'"
+                         alt="Japanese business partnership concept">
+                </div>
+                <div>
+                    <h3>Humanitarian Economy</h3>
+                    <p>We are building an ecosystem where economic activity directly fuels humanitarian aid. Your investment creates a 'whirlpool' (UZU) of positive impact.</p>
+                    <br>
+                    <h3>Global Sourcing of Japanese Value</h3>
+                    <p>Partnership plans include "Product Returns" curated by UZUSHIO Holdings. This allows you to support Japanese farmers and traditional enterprises directly, accessing high-quality Japanese value without needing to visit the country.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP TIERS SECTION -->
+    <section class="page-section" id="plans" style="background-color: var(--primary-light);">
+        <div class="container">
+            <h2 class="section-title text-center" style="margin-bottom: 60px; text-align: center;">The Core Partnership Tiers</h2>
+
+            <!-- $10,000 GATEWAY -->
+            <div class="bleed-image-layout" style="background-color: #fff7ed; padding: 40px;">
+                <div class="bleed-text-side">
+                    <h2 style="font-size: 36px;">Japan Global Gateway</h2>
+                    <h3 style="font-size: 32px; color: var(--accent-gold); margin-top: 10px;">$10,000</h3>
+                    <p style="font-style: italic; margin-bottom: 20px;">"The Bridge between Profit and Purpose"</p>
+                    <ul class="feature-list">
+                        <li>$1,000 Value Product Return: Curated Japanese goods supporting local farmers/small to medium-sized enterprises.</li>
+                        <li>6-Month Business Support: Comprehensive expansion assistance by Flower Angel.</li>
+                        <li>Art Benefit: One Original Song by Echoes of Light produced by Flower Angel. <a href="https://echoes-of-light.jp/" target="_blank" style="color: #92400e; font-weight: bold;">(View Project Details)</a></li>
+                    </ul>
+                    <a href="mailto:contact@uzuworld.com?subject=Inquiry%20on%20Japan%20Global%20Gateway%20($10,000)" class="cta-button">Inquire Now</a>
+                </div>
+                <div class="image-wrapper">
+                    <!-- uzuworld2.jpg に更新 -->
+                    <img src="uzuworld2.jpg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/b45309/ffffff?text=uzuworld2.jpg+Fallback'"
+                         alt="Global logistics and trade connection">
+                </div>
+            </div>
+            
+            <!-- $30,000 MOVEMENT PARTNER -->
+            <div class="bleed-image-layout" style="background-color: #ffffff; padding: 40px; margin-top: 40px;">
+                <div class="image-wrapper">
+                    <!-- uzuworld3.jpg に更新 -->
+                    <img src="uzuworld3.jpg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/ffffff?text=uzuworld3.jpg+Fallback'"
+                         alt="Professional music and video production studio">
+                </div>
+                <div class="bleed-text-side">
+                    <h2 style="font-size: 36px;">Humanitarian Economy Movement Partner</h2>
+                    <h3 style="font-size: 32px; color: var(--accent-gold); margin-top: 10px;">$30,000</h3>
+                    <p style="font-style: italic; margin-bottom: 20px;">"Full Resource Access and Artistic Branding"</p>
+                    <ul class="feature-list">
+                        <li>$3,000 Product Return: Premium Japanese goods.</li>
+                        <li>Full Sales Rights: Access to handle ALL UZUSHIO Holdings products.</li>
+                        <li>1-Year Business Support: Strategic partnership.</li>
+                        <li>Premium Art: Original Song + PV Production by Echoes of Light produced by Flower Angel.</li>
+                    </ul>
+                    <a href="mailto:contact@uzuworld.com?subject=Inquiry%20on%20Movement%20Partner%20($30,000)" class="cta-button">Inquire Now</a>
+                </div>
+            </div>
+            
+            <!-- $100,000 FAMILY PARTNER -->
+            <div class="bleed-image-layout" style="background-color: #f0f9ff; padding: 40px; margin-top: 40px;">
+                <div class="bleed-text-side">
+                    <h2 style="font-size: 36px;">UZU Family Global Partner</h2>
+                    <h3 style="font-size: 32px; color: var(--accent-gold); margin-top: 10px;">$100,000</h3>
+                    <p style="font-style: italic; margin-bottom: 20px;">"Join the Inner Circle. Govern the Future."</p>
+                    <ul class="feature-list">
+                        <li>Luxury Japan Trip: 3-night, 4-day luxury Japan trip included.</li>
+                        <li>$10,000 Product Return: Extensive inventory of Japanese products.</li>
+                        <li>Joint Venture Rights: Co-establish a "UZU [Country Name]" entity abroad with management rights.</li>
+                        <li>Governance: Exclusive participation in the Annual Private Meeting (Japan or Global).</li>
+                    </ul>
+                    <a href="mailto:contact@uzuworld.com?subject=Inquiry%20on%20Family%20Global%20Partner%20($100,000)" class="cta-button">Apply for Interview</a>
+                </div>
+                <div class="image-wrapper">
+                    <!-- uzuworld4.jpg に更新 -->
+                    <img src="uzuworld4.jpg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/334155/ffffff?text=uzuworld4.jpg+Fallback'"
+                         alt="High end corporate boardroom for private meetings">
+                </div>
+            </div>
+
+            <!-- $1,000,000 FOUNDER -->
+            <div class="bleed-image-layout" style="background-color: #fef2f2; padding: 40px; margin-top: 40px;">
+                <div class="image-wrapper">
+                    <!-- uzuworld5.jpg に更新 -->
+                    <img src="uzuworld5.jpg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/b45309/ffffff?text=uzuworld5.jpg+Fallback'"
+                         alt="Cinematic film set for documentary production">
+                </div>
+                <div class="bleed-text-side">
+                    <h2 style="font-size: 36px;">The UZU Founder</h2>
+                    <h3 style="font-size: 32px; color: var(--accent-gold); margin-top: 10px;">$1,000,000</h3>
+                    <p style="font-style: italic; margin-bottom: 20px;">"The Ultimate Legacy. Define History."</p>
+                    <ul class="feature-list">
+                        <li>Ultimate Japan Trip: 7-night, 8-day luxury Japan trip, including two business class air tickets.</li>
+                        <li>$100,000 Product Return: Massive support for Japanese industries.</li>
+                        <li>Permanent Naming Rights: Your name forever attached to a new UZU project.</li>
+                        <li>Legacy Documentary: A 30-minute professional documentary produced by Echoes of Light produced by Flower Angel.</li>
+                        <li>Executive Advisory: Permanent seat on the Global Strategy Council.</li>
+                    </ul>
+                    <a href="mailto:contact@uzuworld.com?subject=Inquiry%20on%20The%20UZU%20Founder%20-%20Private%20Consultation%20($1,000,000)" class="cta-button">PRIVATE CONSULTATION</a>
+                </div>
+            </div>
+            
+            <!-- COMPARISON TABLE -->
+            <h2 class="section-title text-center" style="margin-top: 80px; text-align: center;">Plan Comparison Overview</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Investment</th>
+                            <th>Direct Value / Product Investment</th>
+                            <th>Strategic Growth & Resources</th>
+                            <th>Global Branding & Legacy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Japan Global Gateway</td>
+                            <td>$10,000</td>
+                            <td>$1,000 (Product Credit)</td>
+                            <td>6-Month Launch Support</td>
+                            <td>One Original Song</td>
+                        </tr>
+                        <tr>
+                            <td>Movement Partner</td>
+                            <td>$30,000</td>
+                            <td>$3,000 (Product Credit)</td>
+                            <td>1-Year Strategic Partnership + Full Sales Rights</td>
+                            <td>Song & PV Production</td>
+                        </tr>
+                        <tr>
+                            <td>UZU Family Partner</td>
+                            <td>$100,000</td>
+                            <td>$10,000 (Product Credit)</td>
+                            <td>Joint Venture Setup (Global)</td>
+                            <td>Annual Private Meeting + Luxury Japan Trip</td>
+                        </tr>
+                        <tr>
+                            <td>The UZU Founder</td>
+                            <td>$1,000,000</td>
+                            <td>$100,000 (Product Credit)</td>
+                            <td>Permanent Global Strategy Advisor Role</td>
+                            <td>Permanent Naming Rights + Ultimate Trip & Documentary</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT FOOTER -->
+    <footer>
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 10px;">Join the Whirlpool</h2>
+            <p style="color: #cbd5e1; font-size: 1.2rem; margin-bottom: 20px;">Invest in the future of the Humanitarian Economy.</p>
+            <p style="margin-bottom: 5px;">Flower Angel / UZU WORLD</p>
+            <p style="margin-bottom: 20px;">www.flowerangelhk.com | www.uzuworld.com</p>
+            
+            <div style="margin-top: 20px;">
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="mailto:contact@uzuworld.com" style="color: white; margin: 0 10px;"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+            <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.7;">&copy; 2024 UZU WORLD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
