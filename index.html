@@ -211,7 +211,8 @@
                              alt="SUTADONYA Container" 
                              class="w-full h-auto rounded-lg"
                              onerror="this.style.display='none';">
-                        <p class="text-center text-xs md:text-sm text-gray-500 mt-2 font-bold tracking-widest" data-i18n="story_img_cap">2026年1月本格稼働予定 SUTADONYAコンテナレストラン周辺写真</p>
+                        <!-- 修正: 「2026年1月本格稼働予定」を削除 -->
+                        <p class="text-center text-xs md:text-sm text-gray-500 mt-2 font-bold tracking-widest" data-i18n="story_img_cap">SUTADONYAコンテナレストラン周辺写真</p>
                     </div>
                     
                     <div class="bg-white p-3 rounded-xl shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300">
@@ -419,15 +420,15 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mb-12">
-                <!-- PC用: 矢印 (SVG) -->
+                <!-- PC用: 矢印 (SVG 線画・右向き) -->
                 <div class="hidden md:block absolute top-1/2 left-1/3 transform -translate-y-1/2 -translate-x-1/2 text-4xl text-xmas-gold z-0">
-                    <!-- SVG Plane (Right) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                    <!-- 修正: 線画の飛行機 (右向き) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-12 h-12 text-xmas-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z" />
                     </svg>
                 </div>
                 <div class="hidden md:block absolute top-1/2 right-1/3 transform -translate-y-1/2 translate-x-1/2 text-4xl text-xmas-gold z-0">
-                    <!-- SVG Arrow (Right) -->
+                    <!-- SVG Heart (Right) -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-10 h-10"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84l-12 12-12-12C211.4 51.4 165 36.5 119.4 44.1C50.5 55.5 0 115 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
                 </div>
 
@@ -441,12 +442,10 @@
                     <p class="text-sm text-gray-500" data-i18n="pay_step1_desc">あなたの500円</p>
                 </div>
 
-                <!-- スマホ用: 飛行機 (SVG) - 修正箇所 -->
-                <div class="md:hidden text-center text-4xl text-xmas-gold -my-4 z-0 flex justify-center">
-                    <!-- ジェット機シルエットアイコン (下向き: rotate-90) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 transform rotate-90">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                    </svg>
+                <!-- スマホ用: 飛行機 (画像 589806005244920355.jpg) -->
+                <div class="md:hidden text-center -my-4 z-0 flex justify-center items-center">
+                    <!-- 下向きにするため rotate-180, 背景色と馴染むように mix-blend-multiply を適用 -->
+                    <img src="589806005244920355.jpg" alt="Plane Icon" class="w-12 h-12 object-contain transform rotate-180 mix-blend-multiply">
                 </div>
 
                 <!-- Step 2 -->
@@ -508,10 +507,7 @@
                             Megaworld は、フィリピン証券取引所（PSE: MEG）に上場する国内最大級の不動産デベロッパーであり、これまでに国内外で800棟以上の住宅建物、150万㎡超のオフィススペース、50万㎡超の商業施設、5,000室以上のホテルを開発・運営してきた実績を持ちます。
                             総資産は約4,700億フィリピンペソ（約1兆2,000億円相当）にのぼり、強固な財務基盤と透明性の高い企業統治で知られています。
                         </p>
-                        <p data-i18n="venue_desc_3">
-                            Mactan Newtown はその代表的プロジェクトのひとつで、「住む・働く・学ぶ・楽しむ」が融合した次世代型都市として、住宅、オフィス、ホテル、学校、商業施設、リゾートビーチを一体的に整備。
-                            リゾートと都市機能を両立させた、“Live–Work–Play–Learn” の理念を体現するモデルタウンです。
-                        </p>
+                        <!-- 修正: 指定された文章を削除 -->
                         <p class="text-white font-normal py-4 border-y border-white/10 bg-white/5 mx-auto max-w-2xl mt-6" data-i18n="venue_desc_4">
                             その格式の高さから、<strong class="text-white border-b border-xmas-gold pb-0.5">2026年「ASEAN首脳会議」の会場</strong>にも選定された特別な場所です。
                         </p>
