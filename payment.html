@@ -75,11 +75,22 @@
                     </div>
                 </div>
 
-                <div class="mt-6 pt-6 border-t border-dashed border-gray-200 flex justify-between items-end">
-                    <span class="font-bold text-gray-600" data-i18n="total_label">合計金額</span>
-                    <span class="text-3xl font-bold text-xmas-red font-oswald">
-                        ¥<span id="total-price">500</span>
-                    </span>
+                <!-- 金額内訳エリア (修正箇所) -->
+                <div class="mt-6 pt-6 border-t border-dashed border-gray-200 space-y-2">
+                    <div class="flex justify-between text-gray-600">
+                        <span data-i18n="subtotal_label">小計</span>
+                        <span>¥<span id="subtotal-price">500</span></span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span data-i18n="tax_label">消費税 (10%)</span>
+                        <span>¥<span id="tax-price">50</span></span>
+                    </div>
+                    <div class="flex justify-between items-end border-t border-gray-100 pt-2">
+                        <span class="font-bold text-gray-800" data-i18n="total_label">合計金額</span>
+                        <span class="text-3xl font-bold text-xmas-red font-oswald">
+                            ¥<span id="total-price">550</span>
+                        </span>
+                    </div>
                 </div>
             </section>
 
@@ -225,7 +236,7 @@
             }
         };
 
-        // 翻訳データ
+        // 翻訳データ (小計・消費税を追加)
         const translations = {
             ja: {
                 back_top: "トップへ戻る",
@@ -235,6 +246,8 @@
                 item_name: "Pay It Forwardチケット",
                 item_desc: "伝説のすた丼 1杯分相当",
                 unit: "枚",
+                subtotal_label: "小計",
+                tax_label: "消費税 (10%)",
                 total_label: "合計金額",
                 step2_title: "決済方法を選ぶ",
                 btn_bank: "銀行振込",
@@ -269,6 +282,8 @@
                 item_name: "Pay It Forward Ticket",
                 item_desc: "Equivalent to 1 bowl of Legendary Sutadon",
                 unit: "tickets",
+                subtotal_label: "Subtotal",
+                tax_label: "Tax (10%)",
                 total_label: "Total Amount",
                 step2_title: "Select Payment Method",
                 btn_bank: "Bank Transfer",
@@ -325,7 +340,16 @@
             if (newQuantity >= 1) {
                 quantity = newQuantity;
                 document.getElementById('quantity').value = quantity;
-                document.getElementById('total-price').innerText = (quantity * unitPrice).toLocaleString();
+                
+                // 計算処理（小計・消費税・合計）
+                const subtotal = quantity * unitPrice;
+                const tax = Math.floor(subtotal * 0.1);
+                const total = subtotal + tax;
+
+                // 表示更新
+                document.getElementById('subtotal-price').innerText = subtotal.toLocaleString();
+                document.getElementById('tax-price').innerText = tax.toLocaleString();
+                document.getElementById('total-price').innerText = total.toLocaleString();
             }
         }
 
